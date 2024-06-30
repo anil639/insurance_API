@@ -7,4 +7,5 @@ const lobSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(LOB, "lobSchema");
+const LOB = mongoose.model("LOB", lobSchema);
+module.exports = LOB;

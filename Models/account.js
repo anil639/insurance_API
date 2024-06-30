@@ -6,10 +6,11 @@ const acountSchema = new mongoose.Schema({
     required: true,
   },
   userId: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
 });
 
-module.exports = mongoose.model("Account", acountSchema);
+const Account = mongoose.model("Account", acountSchema);
+module.exports = Account;

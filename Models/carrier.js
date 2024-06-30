@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 
 const carrierSchema = new mongoose.Schema({
-  type: {
+  companyName: {
     type: String,
     required: true,
   },
 });
 
-module.exports = mongoose.model("Carrier", carrierSchema);
+const Carrier = mongoose.model("Carrier", carrierSchema);
+module.exports = Carrier;
