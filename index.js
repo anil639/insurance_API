@@ -15,6 +15,14 @@ mongoose
   .then(() => console.log("DB connected successfully"))
   .catch((e) => console.log(e));
 
+//models
+require("./Models/user");
+require("./Models/Policy");
+require("./Models/lob");
+require("./Models/carrier");
+require("./Models/account");
+require("./Models/agent");
+
 //routes
 app.use("/api", routes);
 
