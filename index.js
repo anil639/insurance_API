@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes/index");
+require("./services/cpuMonitor");
 
 const app = express();
 

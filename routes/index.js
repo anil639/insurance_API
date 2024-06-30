@@ -4,8 +4,12 @@ const multer = require("multer");
 const { Worker } = require("worker_threads");
 const path = require("path");
 
-const { findPolicyByUserName } = require("../controllers/userController");
+const {
+  findPolicyByUserName,
+  getAggregatedPoliciesByUser,
+} = require("../controllers/userController");
 
+const { scheduleMessage } = require("../controllers/schedulerController");
 //file upload
 
 const upload = multer({ dest: "uploads/" });
@@ -40,5 +44,6 @@ router.post("/upload", upload.single("file"), (req, res) => {
 });
 
 router.get("/search/:userName", findPolicyByUserName);
-
+router.get("/aggregated-policies", getAggregatedPoliciesByUser);
+router.post("/schedule-message", scheduleMessage);
 module.exports = router;
